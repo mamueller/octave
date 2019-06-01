@@ -29,14 +29,12 @@ X = [ones(m, 1) X];
 %       are in rows, then, you can use max(A, [], 2) to obtain the max 
 %       for each row.
 %       
-
-
-
-
-
-
-
 % =========================================================================
 
-
+%mm solution:
+% we compute the probabilities for X=k for k=1..10 by 
+probs=sigmoid(X*all_theta');
+% compute the maximum of every row and the column in which it is found
+[max_prob,col_ind]=max(probs,[],2); 
+p=col_ind;
 end
