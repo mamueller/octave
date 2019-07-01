@@ -1,0 +1,114 @@
+# doc-cache created by Octave 4.4.1
+# name: cache
+# type: cell
+# rows: 3
+# columns: 4
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 11
+cell2fields
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 233
+ -- Loadable Function: cell2fields (C, FIELDS, DIM, S)
+     Return structure-array S after setting the fields FIELDS with the
+     slices of cell-array C vertically to dimension DIM.  S must have
+     matching dimensions or be empty.
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 80
+Return structure-array S after setting the fields FIELDS with the slices
+of cell
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 10
+fieldempty
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 152
+ -- Loadable Function: fieldempty (S, NAME)
+     Returns a logical array with same dimensions as structure S,
+     indicating where field NAME is empty.
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 80
+Returns a logical array with same dimensions as structure S, indicating
+where fi
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 11
+fields2cell
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 220
+ -- Loadable Function: fields2cell (S, NAMES)
+     Works similarly to 'struct2cell' (see there), but considers only
+     fields given by the strings in cell array NAMES.  Returns an error
+     if a field is missing in S.
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 80
+Works similarly to 'struct2cell' (see there), but considers only fields
+given by
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 9
+structcat
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 509
+ -- Loadable Function: structcat (DIM, STRUCT1, ..., STRUCTN)
+ -- Loadable Function: structcat (DIM, DEFAULT, STRUCT1, ..., STRUCTN)
+     Return the concatenation of N-d structures STRUCT1, ..., STRUCTN
+     along dimension DIM.  Differently to 'cat', fields need not match
+     -- missing fields get an empty matrix value.  Without structure
+     arguments, an empty structure array is returned.  If a scalar
+     argument DEFAULT is given, missing fields get its value instead of
+     an empty matrix value.
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 80
+Return the concatenation of N-d structures STRUCT1, ..., STRUCTN along
+dimension
+
+
+
+
+

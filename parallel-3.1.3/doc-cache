@@ -1,0 +1,422 @@
+# doc-cache created by Octave 4.4.1
+# name: cache
+# type: cell
+# rows: 3
+# columns: 9
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 12
+install_vars
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1129
+ -- Function File: install_vars (VARNAME, ..., CONNECTIONS)
+     Install named variables at remote machines.
+
+     The variables named in the arguments are distrubted to the remote
+     machines specified by CONNECTIONS and installed there.  The
+     variables must be accessible within the calling function.  If
+     variables have been declared to have global scope, they will also
+     have global scope at the remote machines.
+
+     This function can only be successfully called at the client
+     machine.  See 'pconnect' for a description of the CONNECTIONS
+     variable.  CONNECTIONS can contain all connections of the network,
+     a subset of them, or a single connection.  The local machine
+     (client), if contained in CONNECTIONS, is ignored.
+
+     To install, e.g., all visible variables,
+
+     'install_vars (who (){:}, ...);'
+
+     can be used.
+
+     Internally, this function sends the variables only to one server
+     and then issues the necessary commands to distribute them to all
+     specified servers over server-to-server data connections.
+
+     See also: pconnect, pserver, sclose, rfeval, netcellfun.
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 43
+Install named variables at remote machines.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 11
+netarrayfun
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 845
+ -- Function File: netarrayfun (CONNECTIONS, FUN, ...)
+     Evaluates function FUN in a parallel cluster and collects results.
+
+     This function handles arguments and options equivalently to
+     'pararrayfun' and returnes equivalent output.  Differently, the
+     first argument specifies server machines for parallel remote
+     execution, see 'pconnect' for a description of the CONNECTIONS
+     variable.  A further difference is that the option "ChunksPerProc"
+     is ignored and instead the chunk size can be specified directly
+     with an option "ChunkSize" (option "Vectorized" can be used
+     together with option "ChunkSize" in function 'netarrayfun').
+
+     The further details of operation are the same as for 'netcellfun',
+     please see there.
+
+     See also: netcellfun, pconnect, pserver, sclose, rfeval,
+     install_vars.
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 66
+Evaluates function FUN in a parallel cluster and collects results.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 10
+netcellfun
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2199
+ -- Function File: netcellfun (CONNECTIONS, FUN, ...)
+     Evaluates function FUN in a parallel cluster and collects results.
+
+     This function handles arguments and options equivalently to
+     'parcellfun' and returnes equivalent output.  Differently, the
+     first argument specifies server machines for parallel remote
+     execution, see 'pconnect' for a description of the CONNECTIONS
+     variable.  A further difference is that the option "ChunksPerProc"
+     is ignored and instead the chunk size can be specified directly
+     with an option "ChunkSize".
+
+     This function can only be successfully called at the client machine
+     of the parallel cluster.  CONNECTIONS can contain all connections
+     of the network, a subset of them, or a single connection.  The
+     local machine (client), if contained in CONNECTIONS, is ignored.
+     However, one of the servers can run at the local machine under
+     certain conditions (see 'pconnect') and will not be ignored in this
+     case, so that the local machine can take part in parallel execution
+     with 'netcellfun'.
+
+     As a second level of parallelism, FUN is executed at each server
+     machine (using 'parcellfun or pararrayfun') by default in as many
+     local processes in parallel as the server has processor cores
+     available.  The number of local parallel processes can be
+     configured for each server with the "nlocaljobs" option (see
+     'network_set'), a value of '0' means that the default value will be
+     used, a value of '1' means that execution is not parallel within
+     the server (but still parallel over the cluster).
+
+     There are certain limitations on how FUN can be defined.  These are
+     explained in the documentation of 'rfeval'.
+
+     Cluster execution incurs a considerable overhead.  A speedup is
+     likely if the computation time of FUN is long.  To speed up
+     execution of a large set of arguments with short computation times
+     of FUN, increase "ChunkSize", possibly use "Vectorize" (see
+     'pararrayfun'), and possibly experiment with increasing
+     "nlocaljobs" from the default.
+
+     See also: netarrayfun, pconnect, pserver, sclose, rfeval,
+     install_vars.
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 66
+Evaluates function FUN in a parallel cluster and collects results.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 12
+parallel_doc
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 415
+ -- Function File: parallel_doc ()
+ -- Function File: parallel_doc (KEYWORD)
+     Show parallel package documentation.
+
+     Runs the info viewer Octave is configured with on the documentation
+     in info format of the installed parallel package.  Without
+     argument, the top node of the documentation is displayed.  With an
+     argument, the respective index entry is searched for and its node
+     displayed.
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 36
+Show parallel package documentation.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 11
+pararrayfun
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1155
+ -- Function File: [O1, O2, ...] = pararrayfun (NPROC, FUN, A1, A2, ...)
+ -- Function File: pararrayfun (nproc, fun, ..., "UniformOutput", VAL)
+ -- Function File: pararrayfun (nproc, fun, ..., "ErrorHandler",
+          ERRFUNC)
+     Evaluates a function for corresponding elements of an array.
+     Argument and options handling is analogical to 'parcellfun', except
+     that arguments are arrays rather than cells.  If cells occur as
+     arguments, they are treated as arrays of singleton cells.  Arrayfun
+     supports one extra option compared to parcellfun: "Vectorized".
+     This option must be given together with "ChunksPerProc" and it
+     indicates that FUN is able to operate on vectors rather than just
+     scalars, and returns a vector.  The same must be true for ERRFUNC,
+     if given.  In this case, the array is split into chunks which are
+     then directly served to FUNC for evaluation, and the results are
+     concatenated to output arrays.  If "CumFunc" is also specified (see
+     'parcellfun'), FUN is expected to return the result of the same
+     cumulative operation instead of vectors.
+
+     See also: parcellfun, arrayfun.
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 60
+Evaluates a function for corresponding elements of an array.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 10
+parcellfun
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3360
+ -- Function File: [O1, O2, ...] = parcellfun (NPROC, FUN, A1, A2, ...)
+ -- Function File: parcellfun (nproc, fun, ..., "UniformOutput", VAL)
+ -- Function File: parcellfun (nproc, fun, ..., "ErrorHandler", ERRFUNC)
+ -- Function File: parcellfun (nproc, fun, ..., "VerboseLevel", VAL)
+ -- Function File: parcellfun (nproc, fun, ..., "ChunksPerProc", VAL)
+ -- Function File: parcellfun (nproc, fun, ..., "CumFunc", CUMFUNC)
+     Evaluates a function for multiple argument sets using multiple
+     processes.  NPROC should specify the number of processes.  A
+     maximum recommended value is equal to number of CPUs on your
+     machine or one less.  FUN is a function handle pointing to the
+     requested evaluating function.  A1, A2 etc.  should be cell arrays
+     of equal size.  O1, O2 etc.  will be set to corresponding output
+     arguments.
+
+     The UniformOutput and ErrorHandler options are supported with
+     meaning identical to "cellfun".  A VerboseLevel option controlling
+     the level output is supported.  A value of 0 is quiet, 1 is normal,
+     and 2 or more enables debugging output.  The ChunksPerProc option
+     control the number of chunks which contains elementary jobs.  This
+     option particularly useful when time execution of function is
+     small.  Setting this option to 100 is a good choice in most cases.
+
+     Instead of returning a result for each argument, parcellfun returns
+     only one cumulative result if "CumFunc" is non-empty.  CUMFUNC must
+     be a function which performs an operation on two sets of outputs of
+     FUN and returnes as many outputs as FUN.  If NOUT is the number of
+     outputs of FUN, CUMFUNC gets a previous output set of FUN or of
+     CUMFUNC as first NOUT arguments and the current output of FUN as
+     last NOUT arguments.  The performed operation must be
+     mathematically commutative and associative.  If the operation is
+     e.g.  addition, the result will be the sum(s) of the outputs of FUN
+     over all calls of FUN.  Since floating point addition and
+     multiplication are only approximately associative, the cumulative
+     result will not be exactly reproducible.
+
+     Notice that jobs are served from a single first-come first-served
+     queue, so the number of jobs executed by each process is generally
+     unpredictable.  This means, for example, that when using this
+     function to perform Monte-Carlo simulations one cannot expect
+     results to be exactly reproducible.  The pseudo random number
+     generators of each process are initialised with a unique state.
+     This currently works only for new style generators.
+
+     NOTE: this function is implemented using "fork" and a number of
+     pipes for IPC. Suitable for systems with an efficient "fork"
+     implementation (such as GNU/Linux), on other systems (Windows) it
+     should be used with caution.  Also, if you use a multithreaded
+     BLAS, it may be wise to turn off multi-threading when using this
+     function.
+
+     CAUTION: This function should be regarded as experimental.
+     Although all subprocesses should be cleared in theory, there is
+     always a danger of a subprocess hanging up, especially if unhandled
+     errors occur.  Under GNU and compatible systems, the following
+     shell command may be used to display orphaned Octave processes: ps
+     -ppid 1 | grep octave
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 73
+Evaluates a function for multiple argument sets using multiple
+processes.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+rfeval
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 2654
+ -- Function File: rfeval (FUNC, ..., NOUT, ISOUT, CONNECTION)
+     Evaluate a function at a remote machine.
+
+     FUNC is evaluated with arguments '...' and number of output
+     arguments set to NOUT at remote machine given by CONNECTION.  If
+     ISOUT is not empty, it must be a logical array with NOUT elements,
+     which are true for each of the NOUT output arguments which are
+     requested from the function; the other output arguments will be
+     marked as not requested with '~' at remote execution.
+
+     This function can only be successfully called at the client
+     machine.  See 'pconnect' for a description of the CONNECTION
+     variable.  CONNECTION must contain one single connection.
+
+     If an output argument is given to 'rfeval', the function waits for
+     completion of the remote function call, retrieves the results and
+     returns them.  They will be returned as one cell-array with an
+     entry for each output argument.  If some output arguments are
+     marked as not requested by setting some elements of ISOUT to false,
+     the returned cell-array will only have entries for the requested
+     output arguments.  For consistency, the returned cell-array can be
+     empty.  To assign the output arguments to single variables, you can
+     for example use: '[a, b, c] = returned_cell_array{:};'.
+
+     If no output argument is given to 'rfeval', the function does not
+     retrieve the results of the remote function call but returns
+     immediately.  It is left to the user to retrieve the results with
+     'precv'.  The results will be in the same format as if returned by
+     'rfeval'.  Note that a cell-array, possibly empty, will always have
+     to be retrieved, even if the remote function call should have been
+     performed without output arguments.
+
+     Parallel execution can be achieved by calling 'rfeval' several
+     times with different specified server machines before starting to
+     retrieve the results.
+
+     The specified function handle can refer to a function present at
+     the executing machine or be an anonymous function.  In the latter
+     case, the function specification sent to the server includes the
+     anonymous functions context (generation of the sent function
+     specification is implemented in the Octave core).  Sending a handle
+     to a subfunction, however, will currently not work.  Sending a
+     handle to a private function will only work if its file path is the
+     same at the server.  Sending an anonymous function using "varargin"
+     in the argument list will currently not work.
+
+     See also: pconnect, pserver, sclose, install_vars, netcellfun.
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 40
+Evaluate a function at a remote machine.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 9
+scloseall
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 160
+ -- Function File: scloseall (CONNECTIONS)
+     Deprecated function, calls 'sclose (connections)', which should be
+     called directly.
+
+     See also: sclose.
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 80
+Deprecated function, calls 'sclose (connections)', which should be
+called direct
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+server
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 168
+ This script is here for backwards compatibility and is deprecated. It
+ just calls 'pserver', which should be called directly instead. See
+ documentation of 'pserver'.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 67
+ This script is here for backwards compatibility and is deprecated.
+
+
+
+
+

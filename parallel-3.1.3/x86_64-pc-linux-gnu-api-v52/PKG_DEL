@@ -1,0 +1,18 @@
+
+autoload ("network_get_info", "parallel_interface.oct", "remove");
+
+autoload ("network_set", "parallel_interface.oct", "remove");
+
+autoload ("pconnect", "parallel_interface.oct", "remove");
+
+autoload ("precv", "parallel_interface.oct", "remove");
+
+autoload ("psend", "parallel_interface.oct", "remove");
+
+autoload ("pserver", "parallel_interface.oct", "remove");
+
+autoload ("reval", "parallel_interface.oct", "remove");
+
+autoload ("sclose", "parallel_interface.oct", "remove");
+
+autoload ("select_sockets", "parallel_interface.oct", "remove");

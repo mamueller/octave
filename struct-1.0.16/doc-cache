@@ -1,0 +1,90 @@
+# doc-cache created by Octave 4.4.1
+# name: cache
+# type: cell
+# rows: 3
+# columns: 3
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 9
+getfields
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 257
+ -- Built-in Function: [V1, ...] = getfields (S, 'k1', ...)
+
+     It is equivalent to [S.k1, ...] Return selected values from a
+     scalar struct.  Provides some compatibility and some flexibility.
+
+     See also: setfields,rmfield,isfield,isstruct,struct.
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 76
+It is equivalent to [S.k1, ...] Return selected values from a scalar
+struct.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 9
+setfields
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 251
+ -- Function File: S = setfields(S,KEY,VALUE, ...)
+     Sets S.KEY1 = VALUE1, S.KEY2 = VALUE2, etc, finally returning S.
+     For some compatibility and flexibility.
+
+     See also: cmpstruct, fields, rmfield, isstruct, getfields,
+     isfield,struct.
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 64
+Sets S.KEY1 = VALUE1, S.KEY2 = VALUE2, etc, finally returning S.
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 4
+tars
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 200
+ s = tars (foo,bar, ... ) == struct ("foo",foo,"bar",bar,...)
+
+ Groups foo, bar, ... into a struct whose fields are "foo", "bar" ...
+ and such that s.foo == foo, s.bar == bar ...  
+
+ See also : untar
+
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 23
+ s = tars (foo,bar, ...
+
+
+
+
+

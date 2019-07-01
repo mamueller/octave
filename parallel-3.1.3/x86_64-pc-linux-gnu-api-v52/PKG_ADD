@@ -1,0 +1,18 @@
+
+autoload ("network_get_info", "parallel_interface.oct");
+
+autoload ("network_set", "parallel_interface.oct");
+
+autoload ("pconnect", "parallel_interface.oct");
+
+autoload ("precv", "parallel_interface.oct");
+
+autoload ("psend", "parallel_interface.oct");
+
+autoload ("pserver", "parallel_interface.oct");
+
+autoload ("reval", "parallel_interface.oct");
+
+autoload ("sclose", "parallel_interface.oct");
+
+autoload ("select_sockets", "parallel_interface.oct");
